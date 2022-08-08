@@ -12,7 +12,7 @@ class TableStaff extends Component
     public function render()
     {
         return view('livewire.table-staff', [
-            'staffs' => Staff::orderBy('id', 'DESC')->get(),
+            'staffs' => Staff::orderBy('id', 'desc')->get(),
         ]);
     }
 
@@ -31,5 +31,11 @@ class TableStaff extends Component
         $this->statusUpdate = true;
         $staff = Staff::find($id);
         $this->emit('getStaff', $staff);
+    }
+
+    public function showStaff($id)
+    {
+        $staff = Staff::find($id);
+        $this->emit('showStaff', $staff);
     }
 }

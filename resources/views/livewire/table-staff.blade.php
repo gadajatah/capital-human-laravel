@@ -39,15 +39,20 @@
                 <td>{{ $st->salary }}</td>
                 <td>{{ $st->resume }}</td>
                 <td>
+                    {{-- <a
+                        wire:click="showStaff({{ $st->id }})"
+                        class="btn btn-info btn-sm">
+                        <i class="fa-solid fa-eye"></i> View
+                    </a> --}}
                         <a
                             wire:click="getStaff({{ $st->id }})"
-                            class="btn btn-info btn-sm">
+                            class="btn btn-warning btn-sm">
                             <i class="fas fa-edit"></i> Edit
                         </a>
                         <a
                             wire:click="destroy({{ $st->id }})"
                             class="btn btn-danger btn-sm">
-                            <i class="fas fa-edit"></i> Hapus
+                            <i class="fa-solid fa-trash"></i> Hapus
                         </a>
                 </td>
             </tr>

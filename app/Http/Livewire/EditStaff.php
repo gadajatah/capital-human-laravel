@@ -28,7 +28,7 @@ class EditStaff extends Component
             'resume' => 'required',
         ]);
         $resume = $this->resume->getClientOriginalName();
-        $path = $this->resume->store('documents', 'public');
+        $path = $this->resume;
         $validated['resume'] = $resume;
 
         if ($this->staffId) {
@@ -55,6 +55,7 @@ class EditStaff extends Component
 
     public function showStaff($staff)
     {
+        // $this->staff_id = $staff['staff_id'];
         $this->name = $staff['name'];
         $this->department = $staff['department'];
         $this->position = $staff['position'];
